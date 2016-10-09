@@ -1,0 +1,38 @@
+﻿@model LunchTime.Models.WinnerModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Locations.Count() == 1)
+{
+    <div class="jumbotron">
+        <p>And today we dine at...</p>
+        <p style="font-size:70px;" class="text-success">@Model.Locations.Single()</p>
+        <p>In the famous words of one Joe Yeremuk,</p>
+        <p>"Let us consume some dead animals."</p>
+    </div>
+}
+else
+{
+    foreach (var location in Model.Locations)
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-dismissible alert-warning">
+                    <p>@location</p>.
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<h3>Current Becky's who have voted:</h3>
+
+<ul class="list-group">
+    @foreach (var voter in Model.VotersWhoHaveVoted)
+    {
+        <li class="list-group-item">
+            @voter
+        </li>
+    }
+</ul>
