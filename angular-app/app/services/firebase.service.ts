@@ -17,10 +17,18 @@ export class FirebaseService {
             password: 'password'
         })
             .then(t => {
-debugger;
+                debugger;
             }, t => {
-debugger;
+                debugger;
             });
+    }
+
+    public getSomething() {
+        this.af.database.list('users').subscribe(u => {
+            u.forEach(ui => {
+                console.log(u);
+            })
+        })
     }
 
 }

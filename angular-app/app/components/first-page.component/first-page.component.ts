@@ -19,7 +19,8 @@ export class FirstPageComponent implements OnInit {
 
     public ngOnInit() {
         debugger;
-        this.firebaseService.createUser('a@test.com', '123');
+        // this.firebaseService.createUser('a@test.com', '123');
+        this.firebaseService.getSomething();
     }
 
 }
