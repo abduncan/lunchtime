@@ -24,11 +24,11 @@ export class FirebaseService {
     }
 
     public getSomething() {
-        this.af.database.list('users').subscribe(u => {
-            u.forEach(ui => {
-                console.log(u);
-            })
-        })
+        // this.af.database.list('users').subscribe(u => {
+        //     u.forEach(ui => {
+        //         console.log(u);
+        //     })
+        // })
     }
 
 }

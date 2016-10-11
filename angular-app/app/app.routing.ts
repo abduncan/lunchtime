@@ -1,13 +1,15 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent }         from './components/app.component/app.component';
-import { FirstPageComponent }   from './components/first-page.component/first-page.component';
+import {
+  SignupComponent,
+  LoginComponent
+} from './components';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: FirstPageComponent
+    component: LoginComponent
   },
 ];
 
