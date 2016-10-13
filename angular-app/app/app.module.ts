@@ -20,8 +20,9 @@ import { FirebaseService } from './services';
 // Directives
 
 // Global CSS
-require('../styles/main.css');
+
 require('../node_modules/bootswatch/flatly/bootstrap.min.css');
+require('../styles/main.css');
 
 var firebaseConfig = require('../config/firebase.config.js');
 

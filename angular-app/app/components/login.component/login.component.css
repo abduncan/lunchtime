@@ -1,5 +1,7 @@
-.login,
-.signup {
-    /*text-align: center;*/
+.login {
     max-width: 400px;
+}
+
+.signup {
+    max-width: 370px;
 }
