@@ -1,22 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { FirebaseService } from '../../services';
+import { AuthService } from '../../services';
 
 
 @Component({
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+
+    public email: string;
+    public password: string;
+    public errorMessage: string;
 
     public constructor(
-        private firebaseService: FirebaseService
+        private authService: AuthService
     ) {
 
     }
 
-    public ngOnInit() {
+    public login(): void {
         debugger;
-        this.firebaseService.getSomething();
+        this.errorMessage = undefined;
+        this.authService.login(this.email, this.password)
+            .catch(err => {
+                this.errorMessage = 'Invalid email and password combination.';
+                // show message
+                return Observable.of(false);
+            })
+            .subscribe(isLoggedIn => {
+                debugger;
+            });
     }
 }

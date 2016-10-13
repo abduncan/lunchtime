@@ -23,24 +23,4 @@ export class FirebaseService {
             });
     }
 
-    public getSomething() {
-        debugger;
-        this.af.auth.login({
-            email: 'abduncan0@gmail.com',
-            password: '123456'
-        },
-            {
-                provider: AuthProviders.Password,
-                method: AuthMethods.Password
-            }).then(a => {
-                debugger;
-                this.af.database.list('users').subscribe(u => {
-                    debugger;
-                    u.forEach(ui => {
-                        console.log(u);
-                    });
-                });
-            });
-    }
-
 }

@@ -15,7 +15,10 @@ import {
 } from './components';
 
 // Providers
-import { FirebaseService } from './services';
+import {
+    AuthService,
+    FirebaseService
+} from './services';
 
 // Directives
 
@@ -41,6 +44,7 @@ var firebaseConfig = require('../config/firebase.config.js');
         LoginComponent
     ],
     providers: [
+        AuthService,
         FirebaseService
     ],
     bootstrap: [AppComponent]
