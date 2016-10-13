@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
+    public errorMessage: string = null;
+    
     public ngOnInit() {
         // Init component... 
     }

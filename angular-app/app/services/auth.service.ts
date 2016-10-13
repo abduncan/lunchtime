@@ -15,10 +15,6 @@ export class AuthService {
         private af: AngularFire
     ) { }
 
-    public createUser(email: string, password: string) {
-
-    }
-
     public login(email: string, password: string): Observable<boolean> {
         let promise: Promise<FirebaseAuthState> = this.af.auth.login({
             email: email,
@@ -34,19 +30,6 @@ export class AuthService {
                 debugger;
                 return false;
             });
-        // // .map(project=> {
-        // //     project
-        // // })
-
-        //     .then(a => {
-        //     debugger;
-        //     this.af.database.list('users').subscribe(u => {
-        //         debugger;
-        //         u.forEach(ui => {
-        //             console.log(u);
-        //         });
-        //     });
-        // });
     }
 
 }

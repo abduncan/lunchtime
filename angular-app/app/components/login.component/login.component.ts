@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
+import { SignupComponent } from '../signup.component/signup.component';
 import { AuthService } from '../../services';
 
 
@@ -15,22 +17,34 @@ export class LoginComponent {
     public errorMessage: string = null;
 
     public constructor(
-        private authService: AuthService
+        private authService: AuthService,
+        private router: Router
     ) {
 
     }
 
     public login(): void {
-        debugger;
-        this.errorMessage = undefined;
+        this.errorMessage = null;
         this.authService.login(this.email, this.password)
             .catch(err => {
-                this.errorMessage = 'Invalid email and password combination.';
+                if (err.code === 'auth/user-not-found') {
+                    this.errorMessage = 'Oops! Looks like you don\'t exist.';
+                    this.errorMessage += ' Try creating an account first.';
+                }
+
                 // show message
                 return Observable.of(false);
             })
             .subscribe(isLoggedIn => {
-                debugger;
+                if (!isLoggedIn) {
+                    this.errorMessage = 'Login failed.';
+                } else {
+                    // redirect
+                }
             });
+    }
+
+    public onCreateAccountClick(): void {
+        this.router.navigateByUrl('/signup');
     }
 }

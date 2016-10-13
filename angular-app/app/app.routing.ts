@@ -1,4 +1,4 @@
-import { ModuleWithProviders }  from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {
@@ -11,6 +11,10 @@ const appRoutes: Routes = [
     path: '',
     component: LoginComponent
   },
+  {
+    path: 'signup',
+    component: SignupComponent
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

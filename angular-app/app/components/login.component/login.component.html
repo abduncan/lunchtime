@@ -1,17 +1,17 @@
 <div class="jumbotron">
 	<div class="container">
-		<h1>It's LunchTime!</h1>
+		<h1>Whats for lunch?</h1>
 		<p>
-			This is a simple app that allows you and a group of friends to vote for a place to eat!
+			The most important question of the day is where are we going for lunch?
 		</p>
 
-		<p>
+		<!--<p>
 			Simply
 			<a href="#login">log in</a> to begin voting!
-		</p>
+		</p>-->
 
 		<p>
-			<a class="btn btn-primary btn-lg">Learn more</a>
+			<a class="btn btn-primary btn-lg">Create an account!</a>
 		</p>
 	</div>
 
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 
-		<div *ngIf="errorMessage !== undefined" class="form-group">
+		<div *ngIf="errorMessage !== null" class="form-group">
 			<div class="col-lg-12">
 				<div class="alert alert-danger">
 					{{errorMessage}}
@@ -65,6 +65,6 @@
 
 		<p>Creating one is fast and simple!</p>
 
-		<button class="btn btn-block">Create an account</button>
+		<button class="btn btn-block" (click)="onCreateAccountClick()">Create an account</button>
 	</div>
 </div>

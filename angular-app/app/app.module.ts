@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from 'angularfire2'
+import { AngularFireModule } from 'angularfire2';
 
-import { routing } from './app.routing'
+import { routing } from './app.routing';
 
 // Components
 import {
