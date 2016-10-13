@@ -28,12 +28,12 @@
 		</div>
 		<div class="form-group">
 			<div class="col-lg-12">
-				<input type="email" required [(ngModel)]="email" class="form-control" name="email" id="inputEmail" placeholder="Email">
+				<input type="email" emailValidator [(ngModel)]="email" class="form-control" name="email" id="inputEmail" placeholder="Email">
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-lg-12">
-				<input type="password" required minlength="6" [(ngModel)]="password" class="form-control" name="password" id="inputPassword"
+				<input type="password" required minlength="6" [(ngModel)]="password" class="form-control validation-right" name="password" id="inputPassword"
 					placeholder="Password">
 				<div class="checkbox">
 					<label>
@@ -59,7 +59,7 @@
 
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron bottomtron">
 	<div class="signup container">
 		<h2>Don't have an account?</h2>
 

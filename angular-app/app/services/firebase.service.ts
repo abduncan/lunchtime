@@ -13,8 +13,8 @@ export class FirebaseService {
     public createUser(email: string, password: string): void {
         debugger;
         this.af.auth.createUser({
-            email: 'a1@test.com',
-            password: 'password'
+            email: email,
+            password: password
         })
             .then(t => {
                 debugger;
@@ -22,5 +22,4 @@ export class FirebaseService {
                 debugger;
             });
     }
-
 }

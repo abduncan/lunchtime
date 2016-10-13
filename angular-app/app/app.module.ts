@@ -21,6 +21,9 @@ import {
 } from './services';
 
 // Directives
+import { EmailValidatorDirective } from './directives';
+
+
 
 // Global CSS
 
@@ -41,7 +44,8 @@ var firebaseConfig = require('../config/firebase.config.js');
         AppComponent,
         NavComponent,
         SignupComponent,
-        LoginComponent
+        LoginComponent,
+        EmailValidatorDirective
     ],
     providers: [
         AuthService,
