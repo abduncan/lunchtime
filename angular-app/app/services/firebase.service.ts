@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core'
-import { AngularFire } from 'angularfire2'
+import { Injectable } from '@angular/core';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Injectable()
 export class FirebaseService {
@@ -24,11 +24,23 @@ export class FirebaseService {
     }
 
     public getSomething() {
-        // this.af.database.list('users').subscribe(u => {
-        //     u.forEach(ui => {
-        //         console.log(u);
-        //     })
-        // })
+        debugger;
+        this.af.auth.login({
+            email: 'abduncan0@gmail.com',
+            password: '123456'
+        },
+            {
+                provider: AuthProviders.Password,
+                method: AuthMethods.Password
+            }).then(a => {
+                debugger;
+                this.af.database.list('users').subscribe(u => {
+                    debugger;
+                    u.forEach(ui => {
+                        console.log(u);
+                    });
+                });
+            });
     }
 
 }
